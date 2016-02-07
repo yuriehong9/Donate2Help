@@ -1,0 +1,192 @@
+<html>
+
+    <head>
+        
+        <link rel="stylesheet" href ="main.css">
+        <title> Donate2Help </title>
+      <ul id="drop-nav">
+            <li><a href="waysToHelp.html">Ways To Help</a>
+          <ul>
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="share.html">Share</a></li>
+          </ul>
+          </li>
+  <li><a href="charityOrganizations.html">Charity Organizations</a>
+    <ul>
+      <li><a href="Cancer.html">Cancer</a></li>
+      <li><a href="Poverty.html">Poverty</a></li>
+      <li><a href="Animals.html">Animals</a></li>
+    </ul>
+  </li>
+
+  <li><a href="#">Contact</a>
+    <ul>
+
+      <li><a href="Question.html">Ask me a Question</a></li>
+    </ul>
+  </li>
+          <div id="menu">
+            <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+            </ul>
+                </div>
+</ul>
+       
+    </head>
+
+
+    <body>
+       <script type="text/javascript">
+// if user enters text in the Other text field, uncheck the fixed contribution radio buttons
+function checkOther(form_in) {
+    var radioGrp = form_in.amount;
+    for (i = 0; i < radioGrp.length; i++) {
+        if (i != radioGrp.length - 1) { //the Other radio button must be the last one in the array
+            radioGrp[i].checked = false;
+        } else {
+            radioGrp[i].checked = true;
+        }
+    }
+}
+function trimOther(form_in) {
+    form_in.amountOther.value = form_in.amountOther.value.replace(/[^0-9.]/g, "");
+}
+// if user clicks a fixed contribution amount, clear the Other text field
+function clearOther(form_in) {
+    form_in.amountOther.value = '';
+}
+function checkRecurringOpts() {
+    if ($("#recurring").attr("checked")) {
+        $('#recurring_options').show(200)
+    } else {
+        $('#recurring_options').hide(200)
+    }
+}
+$(checkRecurringOpts);
+</script>
+
+<fieldset id="donation_amount">
+    <legend>Donation Amount</legend>
+
+    <div id="pre_donation_text">
+        <p>&#160;</p>
+    </div>
+    <!-- pre_donation_text -->
+
+    <div id="recurrence">
+
+        <div class="formRow">
+            <input checked="checked" value="0" name="recurring" onclick="checkRecurringOpts()" type="radio" id="one_time" />
+            <label for="one_time">
+                One-time contribution
+            </label>
+        </div>
+
+        <div class="formRow">
+            <input value="1" name="recurring" onclick="checkRecurringOpts()" type="radio" id="recurring" />
+            <label for="recurring">
+                Recurring contribution
+                <a href="#" class="link-help" onclick="window.open('help-recurring.html', 'pop1', 'toolbar=no,menubar=no,scrollbars=no,,width=500,height=200')">
+
+</a>
+            </label>
+        </div>
+
+        
+
+        <span id="recurring_options">
+            <span id='salsaform_1'>
+                <div class='formRow'>
+                    <select name="PAYPERIOD" id="donation_pay_periods" class="salsainput salsaselect" title="">
+                        <option value="MONT" selected="selected">Every Month</option>
+                        <option value="WEEK">Every Week</option>
+                        <option value="QTER">Every 3 Months</option>
+                        <option value="SMYR">Every 6 Months</option>
+                        <option value="YEAR">Every Year</option>
+                    </select>
+                </div>
+
+        
+                <div class='formRow'>
+                    <label class="selectLabel" for="donation_term" title="">for</label>
+                    <select name="TERM" id="donation_term" class="salsainput salsaselect" title="">
+                        <option value="9999" selected="selected">Unlimited</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                    </select>
+                </div>
+              times
+            </span>
+
+    
+        </span>
+
+    </div>
+  
+
+    <div class="formRow">
+        <input id="amt10" value="10" name="amount" type="radio" onfocus="clearOther(this.form);" />
+        <label for="amt10">$10</label>
+    </div>
+
+    <div class="formRow">
+        <input id="amt20" value="20" name="amount" type="radio" onfocus="clearOther(this.form);" />
+        <label for="amt20">$20</label>
+    </div>
+
+    <div class="formRow">
+        <input id="amt30" value="30" name="amount" type="radio" onfocus="clearOther(this.form);" />
+        <label for="amt30">$30</label>
+    </div>
+
+    <div class="clearall"></div>
+    <div class="formRow otherRow ">
+        <input id="other" value="" name="amount" type="radio" />
+        <label for="other">
+            other $
+        </label>
+        <input id="otheramt" name="amountOther" type="text" onfocus="checkOther(this.form);" onblur="trimOther(this.form);" value="" />
+    </div>
+
+</fieldset>
+    </body>
+
+      <p>@copyright 2016 TJ Hacks</p>
+
+
+
+</html>
